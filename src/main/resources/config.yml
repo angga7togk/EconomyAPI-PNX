@@ -1,0 +1,4 @@
+starter-money: 1000
+max-money: 999999999
+prefix: "§g[Money] §r"
+lang: en #id, en

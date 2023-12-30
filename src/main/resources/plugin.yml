@@ -1,0 +1,19 @@
+name: EconomyAPI
+main: angga7togk.economyapi.EconomyAPI
+version: 1.0
+api: 1.0.0
+author: Angga7Togk
+
+permissions:
+  givemoney.command:
+    default: op
+  setmoney.command:
+    default: op
+  mymoney.command:
+    default: true
+  paymoney.command:
+    default: true
+  seemoney.command:
+    default: true
+  reducemoney.command:
+    default: op

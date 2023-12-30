@@ -30,7 +30,7 @@ public class SeeCommand extends Command {
                 return false;
             }
             sender.sendMessage(prefix + "§6Name, §r" + targetName);
-            sender.sendMessage(prefix + "§6Money, §r" + EconomyDB.NumberFormat(targetName, EconomyDB.myMoney(targetName)));
+            sender.sendMessage(prefix + "§6Money, §r" + EconomyDB.NumberFormat(EconomyDB.myMoney(targetName)));
         }
         return true;
     }

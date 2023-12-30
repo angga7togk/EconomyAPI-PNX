@@ -17,7 +17,7 @@ public class MyCommand extends Command {
         if(sender instanceof Player player){
             if(testPermission(sender)){
                 if(EconomyDB.playerExists(player)){
-                    player.sendMessage(EconomyAPI.prefix + "§6Money, §r" + EconomyDB.NumberFormat(player, EconomyDB.myMoney(player)));
+                    player.sendMessage(EconomyAPI.prefix + "§6Money, §r" + EconomyDB.NumberFormat(EconomyDB.myMoney(player)));
                 }
             }
         }

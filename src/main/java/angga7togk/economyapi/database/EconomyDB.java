@@ -4,6 +4,7 @@ import angga7togk.economyapi.EconomyAPI;
 import cn.nukkit.Player;
 
 import java.text.NumberFormat;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -38,8 +39,12 @@ public class EconomyDB {
         }
     }
 
-    public static Map<String, Object> getAll(){
-        return EconomyAPI.money.getAll();
+    public static Map<String, Integer> getAll(){
+        Map<String, Integer> map = new HashMap<>();
+        for (String name : EconomyAPI.money.getKeys(false)) {
+            map.put(name, EconomyAPI.money.getInt(name));
+        }
+        return map;
     }
 
     public static int getMaxMoney(){
@@ -56,12 +61,7 @@ public class EconomyDB {
         return EconomyAPI.money.getInt(getName(player));
     }
 
-    public static String NumberFormat(String playerName, int number){
-        String myLang = EconomyAPI.cfg.getString("lang");
-        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale(myLang, "ID"));
-        return removeRupiah(formatRupiah.format(number));
-    }
-    public static String NumberFormat(Player player, int number){
+    public static String NumberFormat(int number){
         String myLang = EconomyAPI.cfg.getString("lang");
         NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale(myLang, "ID"));
         return removeRupiah(formatRupiah.format(number));
@@ -182,5 +182,14 @@ public class EconomyDB {
         EconomyAPI.money.set(playerName, myMoney - money);
         EconomyAPI.money.save();
         return true;
+    }
+
+    // Igonored
+    public static String NumberFormat(Player player, int number){
+        return NumberFormat(number);
+    }
+    // Igonored
+    public static String NumberFormat(String playerName, int number){
+        return NumberFormat(number);
     }
 }

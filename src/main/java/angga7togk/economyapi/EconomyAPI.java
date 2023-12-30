@@ -1,5 +1,7 @@
 package angga7togk.economyapi;
 
+import java.util.List;
+
 import angga7togk.economyapi.command.*;
 import angga7togk.economyapi.listener.Listeners;
 import cn.nukkit.plugin.PluginBase;
@@ -27,12 +29,15 @@ public class EconomyAPI extends PluginBase {
 
         this.getServer().getPluginManager().registerEvents(new Listeners(), this);
 
-        this.getServer().getCommandMap().register("givemoney", new GiveCommand());
-        this.getServer().getCommandMap().register("setmoney", new SetCommand());
-        this.getServer().getCommandMap().register("mymoney", new MyCommand());
-        this.getServer().getCommandMap().register("paymoney", new PayCommand());
-        this.getServer().getCommandMap().register("seemoney", new SeeCommand());
-        this.getServer().getCommandMap().register("reducemoney", new ReduceMoney());
+        this.getServer().getCommandMap().registerAll(getName(), List.of(
+            new GiveCommand(),
+            new SetCommand(),
+            new MyCommand(),
+            new PayCommand(),
+            new SeeCommand(),
+            new ReduceCommand(),
+            new TopCommand()
+        ));
     }
 
     public static EconomyAPI getInstance(){

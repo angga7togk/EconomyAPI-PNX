@@ -8,9 +8,9 @@ import cn.nukkit.command.CommandSender;
 
 import java.util.Map;
 
-public class ReduceMoney extends Command {
+public class ReduceCommand extends Command {
 
-    public ReduceMoney() {
+    public ReduceCommand() {
         super("reducemoney", "reduce money player", "/reducemoney <player> <money>");
         this.setPermission("reducemoney.command");
     }

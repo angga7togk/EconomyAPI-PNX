@@ -5,20 +5,20 @@ EconomyAPI plugin for PowerNukkitX
 add in your plugin project.
 ### Repository
 ```xml
-    <repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
 ```
 ### Depedency
 ```xml
-    <dependency>
-	    <groupId>com.github.angga7togk</groupId>
-	    <artifactId>EconomyAPi-PNX</artifactId>
-	    <version>Tag</version>
-	</dependency>
+<dependency>
+    <groupId>com.github.angga7togk</groupId>
+    <artifactId>EconomyAPi-PNX</artifactId>
+    <version>Tag</version>
+</dependency>
 ```
 
 # Method
@@ -34,4 +34,14 @@ add in your plugin project.
 
     EconomyDB.reduceMoney(player, 1000);
     EconomyDB.reduceMoney(playerName, 1000);
+
+    /**
+     * @return Map<String, Integer>
+     */
+    EconomyDB.getAll();
+
+    /**
+     * @return IDR 100,018,449 or RP 100,018,449
+     */
+    EconomyDB.NumberFormat(myMoney);
 ```
